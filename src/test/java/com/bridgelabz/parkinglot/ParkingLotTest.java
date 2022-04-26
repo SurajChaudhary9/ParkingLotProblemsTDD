@@ -22,7 +22,7 @@ public class ParkingLotTest {
         boolean isParked = parkingLot.isParked(vehicle);
         Assert.assertTrue(isParked);
     }
-
+//For Already Parked
     @Test
     public void givenVehicle_WhenAlreadyParked_ShouldReturnFalse() {
         try {
@@ -35,7 +35,7 @@ public class ParkingLotTest {
             Assert.assertEquals(ParkingLotException.ExceptionType.PARKING_FULL, e.type);
         }
     }
-
+//For Unmarked
     @Test
     public void givenVehicle_WhenUnParked_ShouldReturnTrue() throws ParkingLotException {
         Vehicle vehicle = new Vehicle("1", "Car");
@@ -44,7 +44,7 @@ public class ParkingLotTest {
         boolean isUnParked = parkingLot.isUnParked(vehicle);
         Assert.assertTrue(isUnParked);
     }
-
+//For Parked entity
     @Test
     public void givenVehicle_WhenUnParked_ShouldReturnFalse() {
         try {
@@ -67,7 +67,7 @@ public class ParkingLotTest {
         parkingLot.park(vehicle1);
         Assert.assertEquals("Parking Full", owner.getStatus());
     }
-
+//Notify Owner & Airport security Parking status full
     @Test
     public void givenVehicle_WhenOwnerAndAadSecurity_ShouldReturnIsFull() throws ParkingLotException {
         parkingLot.addObserver(owner);
